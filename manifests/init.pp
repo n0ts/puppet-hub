@@ -35,7 +35,6 @@ class hub(
           ensure => absent,
         }
 
-        ->
         boxen::env_script { 'hub':
           content  => template('hub/env.sh.erb'),
           priority => lower

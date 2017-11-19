@@ -9,12 +9,15 @@ describe 'hub' do
     {
       :boxen_home    => boxen_home,
       :boxen_repodir => repo_dir,
+      :boxen_repo_url_template => "https://github.com/%s",
+      :boxen_srcdir  => '~/src',
       :boxen_envdir  => env_dir,
+      :homebrew_root => '/opt/boxen/homebrew',
       :osfamily      => "Darwin"
     }
   end
 
-  it { should include_class('boxen::config') }
+  it { should contain_class('boxen::config') }
   it { should contain_package('boxen/brews/hub').with_ensure('latest') }
 
   it 'sets up hub.sh file' do
