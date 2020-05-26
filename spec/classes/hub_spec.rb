@@ -18,7 +18,7 @@ describe 'hub' do
   end
 
   it { should contain_class('boxen::config') }
-  it { should contain_package('boxen/brews/hub').with_ensure('latest') }
+  it { should contain_package('hub').with_ensure('latest') }
 
   it 'sets up hub.sh file' do
     should contain_file("#{env_dir}/hub.sh")
